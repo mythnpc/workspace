@@ -1,0 +1,12 @@
+com\programcreek\consumer\Producer.class
+com\programcreek\consumer\AppTwo.class
+io\confluent\examples\clients\basicavro\Customer.class
+io\confluent\examples\clients\basicavro\Payment.class
+com\programcreek\consumer\Producer$1.class
+io\confluent\examples\clients\basicavro\Customer$Builder.class
+com\programcreek\consumer\App.class
+com\programcreek\consumer\ConsumerLoop.class
+com\programcreek\consumer\App$1.class
+io\confluent\examples\clients\basicavro\Customer$1.class
+io\confluent\examples\clients\basicavro\Payment$1.class
+io\confluent\examples\clients\basicavro\Payment$Builder.class
