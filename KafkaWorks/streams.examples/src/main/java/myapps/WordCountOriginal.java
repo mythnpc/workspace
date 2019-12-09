@@ -20,7 +20,6 @@ import org.apache.kafka.streams.kstream.Grouped;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.Materialized;
 import org.apache.kafka.streams.kstream.Produced;
-import org.apache.kafka.streams.kstream.Serialized;
 import org.apache.kafka.streams.state.KeyValueStore;
 
 import io.confluent.examples.clients.basicavro.Customer;
@@ -28,35 +27,24 @@ import io.confluent.examples.clients.basicavro.Payment;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
 
-public class WordCount {
-
+public class WordCountOriginal {
     public static void main(String[] args) throws Exception {
-    	System.out.println("Startasd");
-   	 // When you want to override serdes explicitly/selectively
-	    final Map<String, String> serdeConfig = Collections.singletonMap("schema.registry.url",
-	                                                                     "http://localhost:8081");
-	 // `Foo` and `Bar` are Java classes generated from Avro schemas
-	    final Serde<Customer> keySpecificAvroSerde = new SpecificAvroSerde<>();
-	    keySpecificAvroSerde.configure(serdeConfig, true); // `true` for record keys
-	    final Serde<Payment> valueSpecificAvroSerde = new SpecificAvroSerde<>();
-	    valueSpecificAvroSerde.configure(serdeConfig, false); // `false` for record values
-    	
+    	System.out.println("HELLOIN");
         Properties props = new Properties();
-        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "customer-payment-avro-group");
+        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "streams-wordcount");
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, keySpecificAvroSerde);
-	    props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, valueSpecificAvroSerde);
-	    props.put("auto.register.schemas", true);
-	    
-
+        props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
+        props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
  
         final StreamsBuilder builder = new StreamsBuilder();
  
-        KStream<Customer, Payment> source = builder.stream("avro-test", Consumed.with(keySpecificAvroSerde, valueSpecificAvroSerde));
-        source.groupByKey(Serialized.with(keySpecificAvroSerde, valueSpecificAvroSerde))
-              .count()
+        KStream<String, String> source = builder.stream("streams-plaintext-input");
+        source.flatMapValues(value -> Arrays.asList(value.toLowerCase(Locale.getDefault()).split("\\W+")))
+              .groupBy((key, value) -> value)
+              .count(Materialized.<String, Long, KeyValueStore<Bytes, byte[]>>as("counts-store-two"))
               .toStream()
-              .peek((key, value) -> System.out.println("key=" + key + ", value=" + value));
+              .peek((key, value) -> System.out.println("key=" + key + ", value=" + value))
+              .to("streams-wordcountorigintwo-output", Produced.with(Serdes.String(), Serdes.Long()));
  
         final Topology topology = builder.build();
         final KafkaStreams streams = new KafkaStreams(topology, props);

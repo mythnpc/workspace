@@ -4,6 +4,7 @@
  "fields": [
      {"name": "id", "type": "int"},
      {"name": "name", "type": "string"},
-     {"name": "age", "type": "int"}
+     {"name": "age", "type": "int"},
+     {"name": "erg", "type": "int", "default": 0}
  ]
 }
