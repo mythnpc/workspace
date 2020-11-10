@@ -1,0 +1,6 @@
+c:\users\gawd\source\repos\ClassLibraryFramework\ClassLibraryFramework\bin\Debug\ClassLibraryFramework.dll
+c:\users\gawd\source\repos\ClassLibraryFramework\ClassLibraryFramework\bin\Debug\ClassLibraryFramework.pdb
+c:\users\gawd\source\repos\ClassLibraryFramework\ClassLibraryFramework\obj\Debug\ClassLibraryFramework.csprojResolveAssemblyReference.cache
+c:\users\gawd\source\repos\ClassLibraryFramework\ClassLibraryFramework\obj\Debug\ClassLibraryFramework.csproj.CoreCompileInputs.cache
+c:\users\gawd\source\repos\ClassLibraryFramework\ClassLibraryFramework\obj\Debug\ClassLibraryFramework.dll
+c:\users\gawd\source\repos\ClassLibraryFramework\ClassLibraryFramework\obj\Debug\ClassLibraryFramework.pdb
