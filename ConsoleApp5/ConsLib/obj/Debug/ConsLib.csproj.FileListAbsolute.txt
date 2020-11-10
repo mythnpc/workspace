@@ -1,0 +1,7 @@
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsLib\bin\Debug\ConsLib.dll
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsLib\bin\Debug\ConsLib.pdb
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsLib\bin\Debug\ClassLibraryFramework.dll
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsLib\obj\Debug\ConsLib.csprojResolveAssemblyReference.cache
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsLib\obj\Debug\ConsLib.csproj.CoreCompileInputs.cache
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsLib\obj\Debug\ConsLib.dll
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsLib\obj\Debug\ConsLib.pdb

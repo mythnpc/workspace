@@ -1,0 +1,10 @@
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsoleApp5.exe.config
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsoleApp5.exe
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsoleApp5.pdb
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.csprojResolveAssemblyReference.cache
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.csproj.CoreCompileInputs.cache
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.exe
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.pdb
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ClassLibraryFramework.dll
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsLib.dll
+C:\Users\Gawd\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsLib.pdb
