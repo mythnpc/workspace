@@ -1,0 +1,52 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        consumer-in-0:
+          destination: batch-3
+          consumer:
+            batch-mode: true
+            use-native-decoding: true
+        output-out-0:
+          destination: batch-out
+      kafka:
+        bindings:
+          consumer-in-0:
+            consumer:
+              configuration:
+                value:
+                  deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        binder:
+          consumer-properties:
+            key:
+              serializer: org.apache.kafka.common.serialization.StringSerializer
+              deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value:
+              serializer: org.apache.kafka.common.serialization.StringSerializer
+              deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  kafka:
+    producer:
+      acks: all
+    consumer:
+      auto-offset-reset: earliest
+
+#    streams:
+#      binder:
+#        configuration:
+#          default:
+#            key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+#            value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+---
+
+#spring:
+#  profiles: transactional
+#  kafka:
+#    consumer:
+#      properties:
+#        isolation.level: read_committed
+#  cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          transaction:
+#            transaction-id-prefix: batch-tx-
